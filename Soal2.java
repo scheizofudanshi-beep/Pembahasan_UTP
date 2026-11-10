@@ -1,7 +1,4 @@
-package ASPRAK.Bahas_UTS;
-
 import java.util.Scanner;
-
 public class Soal2 {
     public static void main(String[] args) {
         // Ketik kode kalian di sini...
