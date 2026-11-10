@@ -1,5 +1,3 @@
-package ASPRAK.Bahas_UTS;
-
 import java.util.Scanner;
 public class Soal1{
     public static void main(String[] args){
@@ -9,7 +7,7 @@ public class Soal1{
         int workerLevel = in.nextInt();
         int upah = 0;
         
-        switch(workerLevel){
+        switch(workerLevel){ //cek level pekerja
             case 1:
                 upah = 30000 + (1000*muchPesanan);
                 break;
@@ -23,7 +21,7 @@ public class Soal1{
                 break;
         }
         
-        if(muchPesanan>=0 && muchPesanan % 2 == 0){
+        if(muchPesanan>=0 && muchPesanan % 2 == 0){ //bonus apabila ada pesanan dan jumlah pesanan merupakan bilangan genap
             upah += 100000;
         }
         
