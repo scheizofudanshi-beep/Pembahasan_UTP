@@ -7,15 +7,10 @@ public class Soal2 {
         // Ketik kode kalian di sini...
         Scanner in = new Scanner(System.in);
         
-        int muchAct = in.nextInt();
-        int muchHP = in.nextInt();
-        int elCount = 0;
-        int missCount = 0;
-        
-        if(muchAct >= 1 && muchAct <=100){
-            
-        }
-
+        int muchAct = in.nextInt(); //banyak aksi
+        int muchHP = in.nextInt(); //banyak HP boss
+        int elCount = 0; //menghitung banyak elemental reaction
+        int missCount = 0; //menghitung banyak miss (Anemo & Geo)
 
         String[] elOne = new String[muchAct];
         String[] elTwo = new String[muchAct];
@@ -28,8 +23,9 @@ public class Soal2 {
         for(int i=0; i<muchAct; i++){
             if(elOne[i].equals("Abyss") || elTwo[i].equals("Abyss")){
                 System.out.println("Shield Activated! Battle Ended!");
-                break;
+                break; //langsung keluar dari for loop, tidak menjalankan kode selanjutnya lagi
             } else if((elOne[i].equals("Anemo") && elTwo[i].equals("Geo")) || (elTwo[i].equals("Anemo") && elOne[i].equals("Geo"))){
+                //kondisi harus lengkap agar tidak terjadi error
                 System.out.println("Serangan Meleset!");
                 missCount += 1;
                 continue;
@@ -42,9 +38,12 @@ public class Soal2 {
                 elCount += 1;
                 muchHP -= 1500;
             } else if(elOne[i].equals(elTwo[i]) || elTwo[i].equals(elOne[i])){
+                //gunakan .equals() untuk pembandingan nilai dari dua string
                 System.out.println("Serangan Lemah DMG: 500");
                 muchHP -= 500;
             } else{
+                //tidak perlu kondisi sesuai arahan soal
+                //karena semua kondisi yang harus ditandakan sudah dicek di atas
                 System.out.println("Normal DMG: 1000");
                 muchHP -= 1000;
             }
@@ -53,14 +52,14 @@ public class Soal2 {
                 System.out.println("Sisa HP Boss: " + muchHP);
             } else{
                 System.out.println("Boss sudah dikalahkan!");
-                break;
+                break; //keluar dari for loop
             }
         }
         
         System.out.print("HASIL: ");
         
-        if(muchHP<=0){ //boss sudah mati
-            if(elCount>=1){ //ada reaksi elemental
+        if(muchHP<=0){ //boss sudah mati atau belum
+            if(elCount>=1){ //ada reaksi elemental atau tidak
                 if(missCount == 0){ //miss atau tidak
                     System.out.println("BINTANG 3");
                 } else{
