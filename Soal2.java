@@ -25,7 +25,7 @@ public class Soal2 {
                 //kondisi harus lengkap agar tidak terjadi error
                 System.out.println("Serangan Meleset!");
                 missCount += 1;
-                continue;
+                continue; // lanjut ke loop selanjutnya, if condition yang menunjukkan hp boss dilewatkan
             } else if((elOne[i].equals("Pyro") && elTwo[i].equals("Cryo")) || (elTwo[i].equals("Pyro") && elOne[i].equals("Cryo"))){
                 System.out.println("Melt DMG: 2000");
                 elCount += 1;
